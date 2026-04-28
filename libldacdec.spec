@@ -17,14 +17,12 @@ BuildRequires: patchelf
 Reverse-engineered unofficial LDAC Bluetooth decoder library
 
 %prep
-cd libldacdec
 git submodule init
 git submodule set-url libldac "$srcdir/libldac"
 git -c protocol.file.allow=always submodule update
 
 
 %build
-cd libldacdec
 make ldacdec
 patchelf --set-soname libldacBT_dec.so libldacdec.so
 mv libldacdec.so libldacBT_dec.so
