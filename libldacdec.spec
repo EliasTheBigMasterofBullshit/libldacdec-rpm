@@ -19,7 +19,7 @@ Reverse-engineered unofficial LDAC Bluetooth decoder library
 
 
 %build
-make ldacenc
+make libldacdec.so
 patchelf --set-soname libldacBT_dec.so libldacdec.so
 mv libldacdec.so libldacBT_dec.so
 
