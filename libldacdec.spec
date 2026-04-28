@@ -19,7 +19,7 @@ Reverse-engineered unofficial LDAC Bluetooth decoder library
 
 %prep
 git submodule init
-git submodule set-url libldac "$srcdir/libldac"
+git submodule set-url libldac "%{SOURCE1}/libldac"
 git -c protocol.file.allow=always submodule update
 
 
