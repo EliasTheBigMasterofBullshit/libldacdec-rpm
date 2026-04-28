@@ -11,6 +11,7 @@ Source2: ldacBT-dec.pc
 BuildRequires: cmake
 BuildRequires: gcc-c++
 BuildRequires: patchelf
+BuildRequires: git
 
 
 %description
