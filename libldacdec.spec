@@ -17,10 +17,6 @@ BuildRequires: git
 %description
 Reverse-engineered unofficial LDAC Bluetooth decoder library
 
-%prep
-mkdir "%{SOURCE0}/libldac/"
-mv -r "%{SOURCE1}/*" "%{SOURCE0}/libldac/"
-
 
 %build
 make ldacdec
