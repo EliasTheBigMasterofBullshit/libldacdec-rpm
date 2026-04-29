@@ -7,13 +7,21 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: build RPM package
-      id: rpm
-      uses: naveenrajm7/rpmbuild@master
-      with:
-        spec_file: "libldacdec.spec"
-        additional_repos: "['centos-release-scl', 'http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm']"
 
+    - name: Prepare environment
+      run: |
+        sudo dnf install -y rpmdevtools rpmlint
+        rpmdev-setuptree
+        workdir="$(pwd)/rpm_workdir"
+        pwd
+        cp libldacdec.spec ~/.rpmbuild/SPECS/libldacdec.spec
+        cp ldacBT-dec.pc ~/.rpmbuild/SOURCES/libldacdec.spec
+        spectool -g -R ~/.rpmbuild/SPECS/libldacdec.spec
+        rpmbuild -ba ~/.rpmbuild/SPECS/libldacdec.spec
+        cp  ~/.rpmbuild/SRPMS/* $workdir
+        cp ~/.rpmbuild/RPMS/* $workdir
+        
+  
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
