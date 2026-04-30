@@ -1,5 +1,4 @@
-
-
+%define _disable_source_fetch 1
 Name:     libldacdec
 Version:  1.0
 Release:  1%{?dist}
