@@ -10,7 +10,7 @@ jobs:
 
     - name: Prepare environment
       run: |
-        sudo apt-get install -y rpmdev
+        sudo apt-get install -y rpm
         rpmdev-setuptree
         workdir="$(pwd)/rpm_workdir"
         pwd
