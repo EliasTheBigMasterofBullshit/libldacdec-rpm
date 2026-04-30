@@ -1,4 +1,4 @@
-%undefine _disable_source_fetch
+
 
 Name:     libldacdec
 Version:  1.0
@@ -6,8 +6,8 @@ Release:  1%{?dist}
 Summary:  The "Hello World" program from GNU
 License:  Proprietary
 URL:      https://github.com/anonymix007/libldacdec
-Source0: https://github.com/anonymix007/libldacdec
-Source1: https://android.googlesource.com/platform/external/libldac.git#commit=e8ff0f96f26b84b47711c549e0d60baa425cd70e
+Source0: https://github.com/EliasTheBigMasterofBullshit/libldacdec # Fork with hack to build libldacBT 
+Source1: https://android.googlesource.com/platform/external/libldac.git #commit=e8ff0f96f26b84b47711c549e0d60baa425cd70e
 Source2: ldacBT-dec.pc
 
 BuildRequires: cmake
@@ -22,13 +22,10 @@ Reverse-engineered unofficial LDAC Bluetooth decoder library
 
 %build
 make libldacdec.so
-patchelf --set-soname libldacBT_dec.so libldacdec.so
-mv libldacdec.so libldacBT_dec.so
+
 
 %install
-install -Dm 0755 "%{SOURCE0}/libldacdec/libldacBT_dec.so" "$RPM_BUILD_ROOT/usr/lib/libldacBT_dec.so"
-install -Dm 0644 "%{SOURCE0}/libldacdec/libldacBT_dec.h" "$RPM_BUILD_ROOT/usr/include/ldac/ldacBT_dec.h"
-install -Dm 0644 "%{SOURCE2}/ldacBT-dec.pc" "$RPM_BUILD_ROOT/usr/lib/pkgconfig/ldacBT-dec.pc"
+%make_install 
 
 
 %files
