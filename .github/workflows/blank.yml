@@ -3,14 +3,14 @@ on: [push, workflow_dispatch]
 
 jobs:
   build:
-    runs-on: fedora-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
 
 
     - name: Prepare environment
       run: |
-        sudo dnf install -y rpmdevtools rpmlint
+        sudo apt-get install -y rpmdev
         rpmdev-setuptree
         workdir="$(pwd)/rpm_workdir"
         pwd
