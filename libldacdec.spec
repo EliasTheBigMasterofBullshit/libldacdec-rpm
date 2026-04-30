@@ -10,11 +10,15 @@ Source0: https://github.com/EliasTheBigMasterofBullshit/libldacdec # Fork with h
 Source1: https://android.googlesource.com/platform/external/libldac.git #commit=e8ff0f96f26b84b47711c549e0d60baa425cd70e
 Source2: ldacBT-dec.pc
 
-BuildRequires: cmake
+BuildRequires: make
 BuildRequires: gcc-c++
 BuildRequires: patchelf
 BuildRequires: git
+BuildRequires: libsndfile-devel
+BuildRequires: libsamplerate-devel
 
+Requires: libsndfile
+Requires: libsamplerate
 
 %description
 Reverse-engineered unofficial LDAC Bluetooth decoder library
