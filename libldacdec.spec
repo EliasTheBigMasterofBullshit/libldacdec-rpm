@@ -21,6 +21,9 @@ Reverse-engineered unofficial LDAC Bluetooth decoder library
 
 
 %build
+git clone https://github.com/EliasTheBigMasterofBullshit/libldacdec
+cd libldacdec
+git submodule update --init --checkout
 make libldacdec.so
 
 
