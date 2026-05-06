@@ -29,6 +29,7 @@ Summary: libldacdec development files
 Provides: libldacdec-devel
 
 %build
+cd %{_sourcedir}
 git clone https://github.com/EliasTheBigMasterofBullshit/libldacdec
 cd libldacdec
 git submodule update --init --checkout
@@ -38,9 +39,9 @@ mv libldacdec.so libldacBT_dec.so
 
 
 %install
-install -m 777 -d "%{_buildroot}/libldacdec/libldacBT_dec.so" "%{_libdir}/libldacBT_dec.so"
-install -m 644 -d "%{_sourcedir}/ldacBT-dec.pc" "%{_libdir}/pkgconfig/ldacBT-dec.pc"
-install -m 644 -d "%{_buildroot}/libldacdec/libldacBT_dec.h" "%{_includedir}/libldacBT_dec.h"
+install -m 777 -d "%{_sourcedir}libldacdec/libldacBT_dec.so" "%{_buildroot}/%{_libdir}/libldacBT_dec.so"
+install -m 644 -d "%{_source0}/ldacBT-dec.pc" "%{_buildroot}/%{_libdir}/pkgconfig/ldacBT-dec.pc"
+install -m 644 -d "%{_sourcedir}libldacdec/libldacBT_dec.h" "%{_buildroot}/%{_includedir}/libldacBT_dec.h"
 
 %files
 %{_libdir}/libldacBT_dec.so
