@@ -23,6 +23,10 @@ Requires: libsamplerate
 %description
 Reverse-engineered unofficial LDAC Bluetooth decoder library
 
+%package devel
+Requires: libldacdec
+Summary: libldacdec development files
+Provides: libldacdec-devel
 
 %build
 git clone https://github.com/EliasTheBigMasterofBullshit/libldacdec
