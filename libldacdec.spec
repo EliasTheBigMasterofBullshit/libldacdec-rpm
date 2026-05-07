@@ -42,12 +42,12 @@ mv libldacdec.so libldacBT_dec.so
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/%{_libdir}
-mkdir -p  $RPM_BUILD_ROOT/%{_libdir}/pkgconfig
-mkdir -p $RPM_BUILD_ROOT/%{_includedir}
-install -m 777 -d "%{_sourcedir}/libldacdec/libldacBT_dec.so" "%{_buildroot}/%{_libdir}/libldacBT_dec.so"
-install -m 644 -d "%{_source0}/ldacBT-dec.pc" "%{_buildroot}/%{_libdir}/pkgconfig/ldacBT-dec.pc"
-install -m 644 -d "%{_sourcedir}/libldacdec/libldacBT_dec.h" "%{_buildroot}/%{_includedir}/libldacBT_dec.h"
+mkdir -p $RPM_BUILD_ROOT%{_libdir}
+mkdir -p  $RPM_BUILD_ROOT%{_libdir}/pkgconfig
+mkdir -p $RPM_BUILD_ROOT%{_includedir}
+install -m 777 -d "%{_sourcedir}/libldacdec/libldacBT_dec.so" "%{_buildroot}%{_libdir}libldacBT_dec.so"
+install -m 644 -d "%{SOURCE2}/ldacBT-dec.pc" "%{_buildroot}%{_libdir}pkgconfig/ldacBT-dec.pc"
+install -m 644 -d "%{_sourcedir}/libldacdec/libldacBT_dec.h" "%{_buildroot}%{_includedir}libldacBT_dec.h"
 
 %files
 %{_libdir}/libldacBT_dec.so
