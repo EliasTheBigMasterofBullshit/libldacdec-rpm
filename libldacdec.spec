@@ -6,13 +6,12 @@ Release:  1%{?dist}
 Summary:  The "Hello World" program from GNU
 License:  APACHE+Proprietary
 URL:      https://github.com/anonymix007/libldacdec
-Source1: https://github.com/EliasTheBigMasterofBullshit/libldacdec/releases/download/workflow_10/libldacdec-1.0.tar.gz
-Source2: ldacBT-dec.pc
+Source0: https://github.com/EliasTheBigMasterofBullshit/libldacdec/releases/download/workflow_10/libldacdec-1.0.tar.gz
+Source1: ldacBT-dec.pc
 
 
 BuildRequires: make
 BuildRequires: gcc-c++
-BuildRequires: patchelf
 BuildRequires: git
 BuildRequires: libsndfile-devel
 BuildRequires: libsamplerate-devel
@@ -36,12 +35,12 @@ $PREFIX=/usr/lib64 make ldacdec
 
 %install
 %make_install
+cp %{SOURCE1} $RPM_BUILD_ROOT/%{_libdir}/pkg-config/ldacBT-dec.pc
 
 %files
 %{_libdir}/libldacBT_dec.so
 
 %files devel
-%{_libdir}/pkgconfig/ldacBT-dec.pc
+%{_libdir}/pkg-config/ldacBT-dec.pc
 %{_includedir}/libldacBT_dec.h
 
-%changelog
