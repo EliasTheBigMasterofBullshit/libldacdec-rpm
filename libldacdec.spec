@@ -1,4 +1,4 @@
-%undefine _disable_source_fetch
+%define _disable_source_fetch 0
 
 Name:     libldacdec
 Version:  1.0
@@ -29,6 +29,9 @@ Provides: libldacdec-devel
 
 %description devel
 Reverse-engineered unofficial LDAC Bluetooth decoder library, development files
+
+%prep	
+%autosetup -n  %{name}-%{ver} -p1
 
 %build
 $PREFIX=/usr/lib64 make ldacdec
