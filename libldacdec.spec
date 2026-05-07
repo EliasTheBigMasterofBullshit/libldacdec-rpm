@@ -31,7 +31,7 @@ Provides: libldacdec-devel
 Reverse-engineered unofficial LDAC Bluetooth decoder library, development files
 
 %prep	
-%autosetup -n  %{name}-%{ver} -p1
+%autosetup -n  libldacdec -p1
 
 %build
 $PREFIX=/usr/lib64 make ldacdec
