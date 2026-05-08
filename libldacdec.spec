@@ -34,11 +34,11 @@ Reverse-engineered unofficial LDAC Bluetooth decoder library, development files
 %autosetup -n  libldacdec -p1
 
 %build
-export PREFIX=/usr/lib64
+export PREFIX=%{_libdir}
 make libldacBT_dec.so 
 
 %install
-export PREFIX=/usr/lib64
+export PREFIX=%{_libdir}
 %make_install
 cp %{SOURCE1} $RPM_BUILD_ROOT/%{_libdir}/pkg-config/ldacBT-dec.pc
 
