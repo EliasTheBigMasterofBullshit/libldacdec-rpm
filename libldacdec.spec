@@ -6,7 +6,7 @@ Release:  1%{?dist}
 Summary:  The "Hello World" program from GNU
 License:  APACHE+Proprietary
 URL:      https://github.com/anonymix007/libldacdec
-Source0: https://github.com/EliasTheBigMasterofBullshit/libldacdec/releases/download/workflow_10/libldacdec-1.0.tar.gz
+Source0: https://github.com/EliasTheBigMasterofBullshit/libldacdec/releases/download/workflow_12/libldacdec-1.0.tar.gz
 Source1: ldacBT-dec.pc
 
 
@@ -34,7 +34,7 @@ Reverse-engineered unofficial LDAC Bluetooth decoder library, development files
 %autosetup -n  libldacdec -p1
 
 %build
-$PREFIX=/usr/lib64 make ldacdec
+$PREFIX=/usr/lib64 make ldacdec 
 
 %install
 %make_install
