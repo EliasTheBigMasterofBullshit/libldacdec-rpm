@@ -34,7 +34,8 @@ Reverse-engineered unofficial LDAC Bluetooth decoder library, development files
 %autosetup -n  libldacdec -p1
 
 %build
-$PREFIX=/usr/lib64 make ldacdec 
+export PREFIX=/usr/lib64
+make ldacdec 
 
 %install
 %make_install
