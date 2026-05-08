@@ -6,7 +6,7 @@ Release:  1%{?dist}
 Summary:  The "Hello World" program from GNU
 License:  APACHE+Proprietary
 URL:      https://github.com/anonymix007/libldacdec
-Source0: https://github.com/EliasTheBigMasterofBullshit/libldacdec/releases/download/workflow_17/libldacdec-1.0.tar.gz
+Source0: https://github.com/EliasTheBigMasterofBullshit/libldacdec/releases/download/workflow_18/libldacdec-1.0.tar.gz
 Source1: ldacBT-dec.pc
 
 
@@ -40,6 +40,8 @@ make libldacBT_dec.so
 %install
 export PREFIX=%{_libdir}
 %make_install
+rm -f $RPM_BUILD_ROOT/%{_libdir}/libldacBT_dec.so.1
+ln -sf $RPM_BUILD_ROOT/%{_libdir}/libldacBT_dec.so $RPM_BUILD_ROOT/%{_libdir}/libldacBT_dec.so.1
 cp %{SOURCE1} $RPM_BUILD_ROOT/%{_libdir}/pkg-config/ldacBT-dec.pc
 
 %files
