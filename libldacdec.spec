@@ -6,7 +6,7 @@ Release:  1%{?dist}
 Summary:  The "Hello World" program from GNU
 License:  APACHE+Proprietary
 URL:      https://github.com/anonymix007/libldacdec
-Source0: https://github.com/EliasTheBigMasterofBullshit/libldacdec/releases/download/workflow_13/libldacdec-1.0.tar.gz
+Source0: https://github.com/EliasTheBigMasterofBullshit/libldacdec/releases/download/workflow_15/libldacdec-1.0.tar.gz
 Source1: ldacBT-dec.pc
 
 
