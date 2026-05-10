@@ -39,6 +39,9 @@ make libldacBT_dec.so
 
 %install
 export PREFIX=%{_libdir}
+mkdir -p %{buildroot}/usr/lib64
+mkdir -p %{buildroot}%{_includedir}
+
 %make_install
 rm -f $RPM_BUILD_ROOT/%{_libdir}/libldacBT_dec.so.1
 ln -sf $RPM_BUILD_ROOT/%{_libdir}/libldacBT_dec.so $RPM_BUILD_ROOT/%{_libdir}/libldacBT_dec.so.1
